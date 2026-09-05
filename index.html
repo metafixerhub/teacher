@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>A Classroom of Memories</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Dancing+Script:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/orientation.css">
+    <link rel="stylesheet" href="css/classroom.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+    <!-- Audio Element -->
+    <audio id="bg-audio" loop>
+        <source src="assets/audio/background_song.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- 1. Rotate Phone Screen -->
+    <div id="orientation-screen" class="screen active">
+        <div class="rotate-content">
+            <div class="phone-icon">📱</div>
+            <h1>Please Rotate Your Phone</h1>
+            <p>Turn your phone sideways to enter the classroom.</p>
+        </div>
+    </div>
+
+    <!-- 2. School Corridor & Gate -->
+    <div id="corridor-screen" class="screen">
+        <div class="corridor-bg"></div>
+        <div class="message-overlay" id="gate-message">
+            <p class="fade-text">A special memory is waiting inside…</p>
+            <p class="fade-text delay">Please click on this gate.</p>
+        </div>
+        <div class="door-container">
+            <div class="door" id="main-gate">
+                <div class="door-handle"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. Classroom Interior -->
+    <div id="classroom-screen" class="screen">
+        <div class="classroom-bg"></div>
+        
+        <!-- Interactive Objects on Desk -->
+        <div class="interactive-area desk-area">
+            
+            <!-- Letter -->
+            <div class="object" id="obj-letter" title="A Letter">
+                <div class="glow-indicator"></div>
+                ✉️
+            </div>
+            
+            <!-- Book -->
+            <div class="object" id="obj-book" title="A Book">
+                <div class="glow-indicator"></div>
+                📖
+            </div>
+            
+            <!-- Report Card -->
+            <div class="object" id="obj-report" title="Report Card">
+                <div class="glow-indicator"></div>
+                📝
+            </div>
+            
+            <!-- Memory Folder -->
+            <div class="object" id="obj-folder" title="Memory Folder">
+                <div class="glow-indicator"></div>
+                📁
+            </div>
+
+        </div>
+
+        <div class="blackboard-area">
+            <div id="blackboard-message"></div>
+        </div>
+    </div>
+
+    <!-- Overlays for Objects -->
+    <div id="overlay-container" class="hidden">
+        <div class="close-btn" id="close-overlay">✕</div>
+        
+        <!-- Letter Content -->
+        <div class="overlay-content hidden" id="content-letter">
+            <div class="paper-letter">
+                <h2>Dear Gayathri Ma’am,</h2>
+                <h3>Happy Teacher’s Day! ❤️</h3>
+                <p>A teacher does much more than teach lessons from a book. A true teacher inspires us to dream, encourages us when we doubt ourselves, and gives us the confidence to keep moving forward.</p>
+                <p>Thank you for your patience, your kindness, your guidance and for always encouraging us to become better versions of ourselves.</p>
+                <p>The lessons you teach us will remain with us far beyond the classroom. Every word of encouragement, every correction, every smile and every moment of support becomes a part of our journey.</p>
+                <p>You have not simply taught us subjects. You have helped us learn how to believe in ourselves.</p>
+                <p><strong>Thank you for being our teacher, our guide, our mentor and our inspiration.</strong></p>
+                <p>With respect, gratitude and heartfelt wishes,</p>
+                <p class="signature">Nur Mohammad Mandal<br>7th</p>
+                <p class="footer-note">🌸 Happy Teacher’s Day, Gayathri Ma’am! 🌸</p>
+            </div>
+        </div>
+
+        <!-- Book Content -->
+        <div class="overlay-content hidden" id="content-book">
+            <div class="book">
+                <div class="book-cover">
+                    <h2>THE LESSONS WE REMEMBER</h2>
+                </div>
+                <div class="book-pages">
+                    <div class="page">
+                        <h3>Chapter 1: Knowledge</h3>
+                        <p>“Every lesson is a step toward a brighter future.”</p>
+                        <h3>Chapter 2: Courage</h3>
+                        <p>“A good teacher teaches us not to fear mistakes.”</p>
+                    </div>
+                    <div class="page">
+                        <h3>Chapter 3: Kindness</h3>
+                        <p>“The greatest lessons are sometimes taught without words.”</p>
+                        <h3>Chapter 4: Dreams</h3>
+                        <p>“Teachers plant seeds of knowledge that grow forever in our hearts.”</p>
+                        <p class="dedication">Dedicated to Gayathri Ma’am ❤️</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Report Card Content -->
+        <div class="overlay-content hidden" id="content-report">
+            <div class="report-card">
+                <h2>SPECIAL TEACHER APPRECIATION REPORT</h2>
+                <div class="report-header">
+                    <p><strong>Teacher:</strong> Gayathri Ma’am</p>
+                    <p><strong>Class:</strong> 7th</p>
+                    <p><strong>Subject:</strong> Inspiring Young Minds</p>
+                </div>
+                <table class="grades-table">
+                    <tr><th>Quality</th><th>Grade</th></tr>
+                    <tr><td>Teaching</td><td>⭐ A+</td></tr>
+                    <tr><td>Patience</td><td>⭐ A+</td></tr>
+                    <tr><td>Kindness</td><td>⭐ A+</td></tr>
+                    <tr><td>Guidance</td><td>⭐ A+</td></tr>
+                    <tr><td>Motivation</td><td>⭐ A+</td></tr>
+                    <tr><td>Understanding</td><td>⭐ A+</td></tr>
+                    <tr><td>Inspiration</td><td>⭐ A+</td></tr>
+                    <tr><td>Support</td><td>⭐ A+</td></tr>
+                </table>
+                <div class="report-footer">
+                    <h3 class="final-grade">OVERALL GRADE: A+</h3>
+                    <div class="stamp">OUTSTANDING TEACHER</div>
+                    <p class="punchline">“Promoted to Forever in Our Hearts.” ❤️</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Folder / Photo Content -->
+        <div class="overlay-content hidden" id="content-folder">
+            <div class="memory-folder">
+                <h2>CLASS 7 — MEMORIES</h2>
+                <div class="photo-frame">
+                    <img src="assets/teacher-day-photo.png" alt="Class Memory with Gayathri Ma'am">
+                </div>
+                <div class="photo-caption">
+                    <p>One classroom. Many memories. One teacher who made them meaningful.</p>
+                    <p class="quote">“These are the moments we will remember.”</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/audio.js"></script>
+    <script src="js/orientation.js"></script>
+    <script src="js/interactions.js"></script>
+    <script src="js/classroom.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
