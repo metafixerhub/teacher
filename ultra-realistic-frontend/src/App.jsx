@@ -9,6 +9,7 @@ export default function App() {
   const [started, setStarted] = useState(false);
 
   useEffect(() => {
+    // Vercel deployment trigger
     // Backend API hit (Now hitting the Express Backend on Render)
     fetch('https://teacher-g2wz.onrender.com/api/visit', { method: 'POST' }).catch((e) => {
       console.log("Could not reach backend API on Render.");
