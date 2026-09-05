@@ -9,9 +9,9 @@ export default function App() {
   const [started, setStarted] = useState(false);
 
   useEffect(() => {
-    // Backend API hit (Now hitting the Express Backend)
-    fetch('http://localhost:5000/api/visit', { method: 'POST' }).catch((e) => {
-      console.log("Could not reach backend API at port 5000.");
+    // Backend API hit (Now hitting the Express Backend on Render)
+    fetch('https://teacher-g2wz.onrender.com/api/visit', { method: 'POST' }).catch((e) => {
+      console.log("Could not reach backend API on Render.");
     });
   }, []);
 
